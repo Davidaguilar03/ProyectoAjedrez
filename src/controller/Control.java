@@ -1,6 +1,5 @@
 package controller;
 
-
 import model.*;
 import view.IoManager;
 
@@ -12,7 +11,11 @@ public class Control {
 	}
 
 	public void init() {
-		Chess chess= new Chess();
+		Chess chess = new Chess();
+		chess.putAllPieces();
 		io.showMessage(chess.showBoard());
+		chess.searchCells();
+		chess.setScores();
+		io.showMessage(chess.showMoves());
 	}
 }
